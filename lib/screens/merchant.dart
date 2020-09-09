@@ -1,4 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
 
 class MerchantScreen extends StatefulWidget {
   MerchantScreen({ Key key }): super(key: key);
@@ -11,13 +15,26 @@ class _MerchantScreenState extends State<MerchantScreen> {
 
   bool isChecked = false;
   Map<String, bool> social_causes = {
-    "Black-Owned": false,
-    "Woman-Owned": false,
-    "Veteran-Owned": false,
+    "Black Owned": false,
+    "Woman Owned": false,
+    "Veteran Owned": false,
+    "LGBTQ Owned": false,
+    "Hispanic Owned": false,
+    "Asian Owned": false,
+    "Disability Owned": false,
+    "Formerly Incarcerated Owned": false,
+    "Immigrant Owned": false,
+    "Environmentally Conscious": false,
+    "Fair Labor": false,
+    "Animal Rights": false,
   };
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF031956),
+        title: Text('Merchants'),
+      ),
       body: Container(
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
@@ -101,8 +118,7 @@ class _MerchantScreenState extends State<MerchantScreen> {
               )
             ),
             Card(
-              child: ListView(
-                shrinkWrap: true,
+              child: Column(
                 children: social_causes.keys.map((t) => CheckboxListTile(
                   title: Text(t),
                   value: social_causes[t],
@@ -114,6 +130,34 @@ class _MerchantScreenState extends State<MerchantScreen> {
                 )).toList()
               ),
             ),
+            Container(
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    spreadRadius: 1,
+                    blurRadius: 5,
+                    offset: Offset(0, 1), // changes position of shadow
+                  ),
+                ]
+              ),
+              child: RaisedButton(
+                color: const Color(0xFF2671B9),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                onPressed: () {
+                  http.post('http://localhost:3000', body: jsonEncode({
+
+                  }));
+                },
+                child: Container(
+                  child: Text('Submit Details',
+                    style: TextStyle(color: Colors.white)
+                  ),
+                ),
+              ),
+            )
           ],
         )
       ),
