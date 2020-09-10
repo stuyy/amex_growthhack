@@ -51,6 +51,8 @@ flutter:
     - assets/amex_bg.jpg
     - assets/shop_small.png
     - assets/amex_logo.png
+    - assets/cafe.jpg
+    - assets/amex_bg_light.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

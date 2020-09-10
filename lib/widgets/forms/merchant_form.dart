@@ -25,6 +25,46 @@ class _MerchantFormState extends State<MerchantForm> {
     _communityDescriptionController.addListener(communityDescriptionChanged);
     _originDescriptionController.addListener(originDescriptionChanged);
     _futureDescriptionController.addListener(futureDescriptionChanged);
+
+    handlePost({
+      'name': 'SHAKTIBARRE',
+      'descriptions': {
+        'community': 'SHAKTIBARRE',
+        'origin': 'SHAKTIBARRE',
+        'future': 'SHAKTIBARRE'
+      },
+      'social_values': ['Immigrant Owned', 'Black Owned', 'Veteran Owned'],
+    });
+
+    handlePost({
+      'name': 'CITY VIEW LIVING',
+      'descriptions': {
+        'community': 'Amazon Web',
+        'origin': 'Amazon Web',
+        'future': 'Amazon Web'
+      },
+      'social_values': ['Immigrant Owned', 'Black Owned', 'Veteran Owned'],
+    });
+
+    handlePost({
+      'name': "LUKE'S LOBSTER - LAB",
+      'descriptions': {
+        'community': 'Amazon Web',
+        'origin': 'Amazon Web',
+        'future': 'Amazon Web'
+      },
+      'social_values': ['Immigrant Owned', 'Black Owned', 'Veteran Owned'],
+    });
+
+    handlePost({
+      'name': "HANA FOOD RETAIL",
+      'descriptions': {
+        'community': 'HANA FOOD RETAIL',
+        'origin': 'HANA FOOD RETAIL',
+        'future': 'HANA FOOD RETAIL'
+      },
+      'social_values': ['Immigrant Owned', 'Black Owned', 'Veteran Owned'],
+    });
   }
 
   @override
