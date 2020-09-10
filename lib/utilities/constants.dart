@@ -12,6 +12,7 @@ const CHAR_LIMIT_100 = 100;
 
 // Success Messages
 const SUCCESS_MESSAGE = 'Successfully Added Merchant!';
+const SUCCESS_CUSTOMER_ADD = 'Successfully Onboarded!';
 
 const SUBMIT_MERCHANT = 'Submit Details';
 
@@ -29,3 +30,5 @@ Map<String, bool> SOCIAL_CAUSES = {
   "Fair Labor": false,
   "Animal Rights": false,
 };
+
+const ZIP_CODE_FIELD = 'Enter your Zip Code';

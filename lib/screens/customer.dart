@@ -34,10 +34,15 @@ class _CustomerScreenState extends State<CustomerScreen> {
                   return Column(
                     children: <Widget>[
                       // Widget to display the list of project
-                      Card(
-                        child: ListTile(
-                          title: Text(merchant.name),
+                      InkWell(
+                        child: Card(
+                          child: ListTile(
+                            title: Text(merchant.name),
+                          ),
                         ),
+                        onTap: () {
+                          Navigator.pushNamed(context, '/merchant/profile', arguments: merchant);
+                        },
                       )
                     ],
                   );

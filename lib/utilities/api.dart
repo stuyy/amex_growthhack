@@ -8,7 +8,8 @@ const BASE_URL = "http://10.0.2.2:3000";
 enum ENDPOINTS {
   CREATE_MERCHANT,
   GET_ALL_MERCHANTS,
-  GET_MERCHANT
+  GET_MERCHANT,
+  CREATE_CUSTOMER,
 }
 
 String getEndpoint(ENDPOINTS endpoint) {
@@ -19,6 +20,8 @@ String getEndpoint(ENDPOINTS endpoint) {
       return "${BASE_URL}/merchants";
     case ENDPOINTS.GET_MERCHANT:
       return "${BASE_URL}/merchants/search";
+    case ENDPOINTS.CREATE_CUSTOMER:
+      return "${BASE_URL}/customers/social_causes";
     default:
       return BASE_URL;
   }
@@ -37,7 +40,15 @@ Future fetchMerchants() async {
 Future handlePost(body) => http.post(
   getEndpoint(ENDPOINTS.CREATE_MERCHANT),
   body: jsonEncode(body),
-  headers: <String, String>{
+  headers: <String, String> {
     'Content-Type': 'application/json; charset=UTF-8',
   },
+);
+
+Future postCustomerSocialValues(body) => http.post(
+  getEndpoint(ENDPOINTS.CREATE_CUSTOMER),
+  body: jsonEncode(body),
+  headers: <String, String> {
+    'Content-Type': 'application/json; charset=UTF-8',
+  }
 );

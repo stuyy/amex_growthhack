@@ -11,7 +11,7 @@ class MainMenu extends StatelessWidget {
         Align(
           child: LayoutBuilder(
               builder: (context, constraints) => Padding(
-                padding: EdgeInsets.only(bottom: constraints.maxHeight * 0.55),
+                padding: EdgeInsets.only(bottom: constraints.maxHeight * 0.60),
                 child: Container(
                   decoration: BoxDecoration(
                       image: DecorationImage(
@@ -25,7 +25,7 @@ class MainMenu extends StatelessWidget {
         Align(
           child: LayoutBuilder(
               builder: (context, constraints) => Padding(
-                padding: EdgeInsets.only(top: constraints.maxHeight * 0.15),
+                padding: EdgeInsets.only(top: constraints.maxHeight * 0.1),
                 child: Container(
                   decoration: BoxDecoration(
                       image: DecorationImage(
@@ -44,10 +44,32 @@ class MainMenu extends StatelessWidget {
               child: Container(
                   padding: EdgeInsets.all(30),
                   color: const Color(0xFF031956),
-                  height: 270,
+                  height: 280,
                   width: constraints.maxWidth * 1,
                   child: Column(
                     children: [
+                      Container(
+                        width: constraints.maxWidth * 0.9,
+                        child: RaisedButton(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25),
+                          ),
+                          child: Text(
+                            'Onboarding',
+                            style: GoogleFonts.ptSans(
+                                textStyle: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  letterSpacing: -0.5,
+                                )
+                            ),
+                          ),
+                          onPressed: () => {
+                            Navigator.pushNamed(context, '/onboarding')
+                          },
+                          color: const Color(0xFF2671B9),
+                        ),
+                      ),
                       Container(
                         width: constraints.maxWidth * 0.9,
                         child: RaisedButton(
