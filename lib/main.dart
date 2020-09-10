@@ -5,6 +5,7 @@ import 'package:amex_growthhack/screens/merchant_profile.dart';
 import 'package:amex_growthhack/widgets/main_menu.dart';
 import 'package:flutter/material.dart';
 
+import 'package:google_fonts/google_fonts.dart';
 void main() {
   runApp(MyApp());
 }
@@ -44,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: MainMenu()
+      body: MainMenu(),
     );
   }
 }
