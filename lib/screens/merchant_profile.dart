@@ -22,7 +22,7 @@ class MerchantProfileScreen extends StatelessWidget {
           Container(
             height: 100,
             child: ListTile(
-              title: Text('Starbucks', style: TextStyle(color: Colors.white, fontSize: 18)),
+              title: Text(merchant.name, style: TextStyle(color: Colors.white, fontSize: 18)),
               subtitle: Text('starbucks.com', style: TextStyle(color: Colors.white, fontSize: 18)),
               contentPadding: EdgeInsets.only(top: 12, left: 20),
             ),

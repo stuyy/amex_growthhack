@@ -56,6 +56,10 @@ class _CustomerScreenState extends State<CustomerScreen> {
                                         color: Colors.white,
                                       ),
                                     ),
+                                    subtitle: Text(
+                                      'Veteran Owned',
+                                      style: TextStyle(color: Colors.blue[300]),
+                                    ),
                                   ),
                                 ),
                                 Expanded(

@@ -15,7 +15,7 @@ class _GoogleMapsState extends State<GoogleMaps> {
 
   static final CameraPosition _kGooglePlex = CameraPosition(
     target: LatLng(37.7670169511878, -122.42184275),
-    zoom: 64.4746,
+    zoom: 34.4746,
   );
 
   static final CameraPosition _kLake = CameraPosition(

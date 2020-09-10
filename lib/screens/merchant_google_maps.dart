@@ -15,15 +15,9 @@ class _MerchantGoogleMapsScreenState extends State<MerchantGoogleMapsScreen> {
   Completer<GoogleMapController> _controller = Completer();
 
   static final CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.7670169511878, -122.42184275),
-    zoom: 64.4746,
+    target: LatLng(40.719333, -73.989977),
+    zoom: 34.4746,
   );
-
-  static final CameraPosition _kLake = CameraPosition(
-      bearing: 192.8334901395799,
-      target: LatLng(37.7670169511878, -122.42184275),
-      tilt: 59.440717697143555,
-      zoom: 500);
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +26,7 @@ class _MerchantGoogleMapsScreenState extends State<MerchantGoogleMapsScreen> {
     return new Scaffold(
       appBar: AppBar(
         title: Text(merchant.name),
+        backgroundColor: const Color(0xFF031956),
       ),
       body: GoogleMap(
         mapType: MapType.normal,
@@ -41,11 +36,11 @@ class _MerchantGoogleMapsScreenState extends State<MerchantGoogleMapsScreen> {
         },
         markers: {
           Marker(
-              markerId: MarkerId(_kGooglePlex.toString()),
-              position: _kGooglePlex.target,
-              infoWindow: InfoWindow(
-                title: 'Test',
-              )
+            markerId: MarkerId(_kGooglePlex.toString()),
+            position: _kGooglePlex.target,
+            infoWindow: InfoWindow(
+              title: 'Test',
+            )
           )
         },
       ),

@@ -27,6 +27,7 @@ class _CustomerOnboardingScreenState extends State<CustomerOnboardingScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Onboarding Menu'),
+        backgroundColor: const Color(0xFF031956),
       ),
       body: Builder(
         builder: (BuildContext innerContext) {
@@ -34,15 +35,15 @@ class _CustomerOnboardingScreenState extends State<CustomerOnboardingScreen> {
             children: [
               BaseFormField(this.controller, ZIP_CODE_FIELD, '', 15).build(context),
               Column(
-                  children: socialCauses.keys.map((t) => CheckboxListTile(
-                      title: Text(t),
-                      value: socialCauses[t],
-                      onChanged: (bool val) => {
-                        setState(() => {
-                          socialCauses[t] = val
-                        })
-                      }
-                  )).toList()
+                children: socialCauses.keys.map((t) => CheckboxListTile(
+                  title: Text(t),
+                  value: socialCauses[t],
+                  onChanged: (bool val) => {
+                    setState(() => {
+                      socialCauses[t] = val
+                    })
+                  }
+                )).toList()
               ),
               RaisedButton(
                 color: const Color(0xFF2671B9),

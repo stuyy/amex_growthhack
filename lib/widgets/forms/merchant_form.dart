@@ -34,6 +34,12 @@ class _MerchantFormState extends State<MerchantForm> {
         'future': 'SHAKTIBARRE'
       },
       'social_values': ['Immigrant Owned', 'Black Owned', 'Veteran Owned'],
+      'location': {
+        'address': '449 Keap St',
+        'city': 'Brooklyn',
+        'state': 'New York',
+        'postal': '11211',
+      }
     });
 
     handlePost({
@@ -44,6 +50,12 @@ class _MerchantFormState extends State<MerchantForm> {
         'future': 'Amazon Web'
       },
       'social_values': ['Immigrant Owned', 'Black Owned', 'Veteran Owned'],
+      'location': {
+        'address': '156 Hope St',
+        'city': 'Brooklyn',
+        'state': 'New York',
+        'postal': '11211',
+      }
     });
 
     handlePost({
@@ -54,16 +66,28 @@ class _MerchantFormState extends State<MerchantForm> {
         'future': 'Amazon Web'
       },
       'social_values': ['Immigrant Owned', 'Black Owned', 'Veteran Owned'],
+      'location': {
+        'address': '242 E 81st St',
+        'city': 'Manhattan',
+        'state': 'New York',
+        'postal': '10028',
+      }
     });
 
     handlePost({
-      'name': "HANA FOOD RETAIL",
+      'name': "Hana Food Retail",
       'descriptions': {
-        'community': 'HANA FOOD RETAIL',
-        'origin': 'HANA FOOD RETAIL',
-        'future': 'HANA FOOD RETAIL'
+        'community': 'Hana Food Retail',
+        'origin': 'Hana Food Retail',
+        'future': 'Hana Food Retail'
       },
       'social_values': ['Immigrant Owned', 'Black Owned', 'Veteran Owned'],
+      'location': {
+        'address': '242 E 81st St',
+        'city': 'Manhattan',
+        'state': 'New York',
+        'postal': '10028',
+      }
     });
   }
 

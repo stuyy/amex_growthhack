@@ -23,3 +23,7 @@ https://pub.dev/packages/google_maps_flutter
 # To install dependencies:
 
 ```flutter pub get```
+
+# Push Notification Support
+
+You must have a Firebase project setup in order for this to work
