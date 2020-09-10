@@ -1,10 +1,5 @@
-import 'dart:convert';
-
-import 'package:amex_growthhack/api/api.dart';
-import 'package:amex_growthhack/widgets/merchant_form.dart';
+import 'package:amex_growthhack/widgets/forms/merchant_form.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-
 
 class MerchantScreen extends StatefulWidget {
   MerchantScreen({ Key key }): super(key: key);
@@ -14,9 +9,6 @@ class MerchantScreen extends StatefulWidget {
 }
 
 class _MerchantScreenState extends State<MerchantScreen> {
-
-  bool isChecked = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

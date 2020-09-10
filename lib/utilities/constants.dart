@@ -9,3 +9,23 @@ const FUTURE_FIELD = 'What lessons have you learned in 2020 that you believe wil
 
 const CHAR_LIMIT_500 = 500;
 const CHAR_LIMIT_100 = 100;
+
+// Success Messages
+const SUCCESS_MESSAGE = 'Successfully Added Merchant!';
+
+const SUBMIT_MERCHANT = 'Submit Details';
+
+Map<String, bool> SOCIAL_CAUSES = {
+  "Black Owned": false,
+  "Woman Owned": false,
+  "Veteran Owned": false,
+  "LGBTQ Owned": false,
+  "Hispanic Owned": false,
+  "Asian Owned": false,
+  "Disability Owned": false,
+  "Formerly Incarcerated Owned": false,
+  "Immigrant Owned": false,
+  "Environmentally Conscious": false,
+  "Fair Labor": false,
+  "Animal Rights": false,
+};

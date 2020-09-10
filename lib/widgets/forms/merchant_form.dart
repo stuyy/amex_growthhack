@@ -1,4 +1,4 @@
-import 'package:amex_growthhack/api/api.dart';
+import 'package:amex_growthhack/utilities/api.dart';
 import 'package:amex_growthhack/utilities/constants.dart';
 import 'package:amex_growthhack/widgets/forms/base_form.dart';
 import 'package:flutter/material.dart';
@@ -10,28 +10,13 @@ class MerchantForm extends StatefulWidget {
 }
 
 class _MerchantFormState extends State<MerchantForm> {
+  final _formKey = GlobalKey<FormState>();
   final _businessNameController = TextEditingController();
   final _communityDescriptionController = TextEditingController();
   final _originDescriptionController = TextEditingController();
   final _futureDescriptionController = TextEditingController();
 
-  final _formKey = GlobalKey<FormState>();
-
-  final Map<String, bool> socialCauses = {
-    "Black Owned": false,
-    "Woman Owned": false,
-    "Veteran Owned": false,
-    "LGBTQ Owned": false,
-    "Hispanic Owned": false,
-    "Asian Owned": false,
-    "Disability Owned": false,
-    "Formerly Incarcerated Owned": false,
-    "Immigrant Owned": false,
-    "Environmentally Conscious": false,
-    "Fair Labor": false,
-    "Animal Rights": false,
-  };
-
+  final Map<String, bool> socialCauses = SOCIAL_CAUSES;
 
   @override
   void initState() {
@@ -46,30 +31,32 @@ class _MerchantFormState extends State<MerchantForm> {
   void dispose() {
     _businessNameController.dispose();
     _communityDescriptionController.dispose();
+    _originDescriptionController.dispose();
+    _futureDescriptionController.dispose();
     super.dispose();
   }
 
   businessNameChanged() {
-    print(_businessNameController.text);
+    //print(_businessNameController.text);
   }
 
   communityDescriptionChanged() {
-    print(_communityDescriptionController.text);
+    //print(_communityDescriptionController.text);
   }
 
   originDescriptionChanged() {
-    print(_originDescriptionController.text);
+    //print(_originDescriptionController.text);
   }
 
   futureDescriptionChanged() {
-    print(_futureDescriptionController.text);
+    //print(_futureDescriptionController.text);
   }
 
   Map<String, dynamic>getSubmittedValues() {
     List<String> causes = [];
     socialCauses.forEach((key, value) { if (value) causes.add(key); });
     return {
-      'name': _businessNameController.text,
+      'name': _businessNameController.text.toLowerCase(),
       'descriptions': {
         'community': _communityDescriptionController.text,
         'origin': _originDescriptionController.text,
@@ -77,6 +64,19 @@ class _MerchantFormState extends State<MerchantForm> {
       },
       'social_values': causes,
     };
+  }
+
+  void resetForm() {
+    _futureDescriptionController.clear();
+    _originDescriptionController.clear();
+    _communityDescriptionController.clear();
+    _businessNameController.clear();
+
+    socialCauses.forEach((key, value) {
+      setState(() {
+        socialCauses[key] = false;
+      });
+    });
   }
 
   @override
@@ -87,6 +87,7 @@ class _MerchantFormState extends State<MerchantForm> {
         Form(
           key: _formKey,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               BaseFormField(
                 _businessNameController,
@@ -144,10 +145,17 @@ class _MerchantFormState extends State<MerchantForm> {
                   onPressed: () async {
                     if (_formKey.currentState.validate()) {
                       await handlePost(getSubmittedValues());
+                      final snackbar = SnackBar(
+                        content: Text(SUCCESS_MESSAGE),
+                        duration: Duration(seconds: 2),
+                        backgroundColor: Colors.blue[500]
+                      );
+                      Scaffold.of(context).showSnackBar(snackbar);
+                      this.resetForm();
                     }
                   },
                   child: Container(
-                    child: Text('Submit Details',
+                    child: Text(SUBMIT_MERCHANT,
                         style: TextStyle(color: Colors.white)
                     ),
                   ),
