@@ -1,6 +1,7 @@
 import 'package:amex_growthhack/screens/customer.dart';
 import 'package:amex_growthhack/screens/customer_onboarding.dart';
 import 'package:amex_growthhack/screens/merchant.dart';
+import 'package:amex_growthhack/screens/merchant_google_maps.dart';
 import 'package:amex_growthhack/screens/merchant_profile.dart';
 import 'package:amex_growthhack/widgets/main_menu.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         '/customer': (context) => CustomerScreen(),
         '/merchant': (context) => MerchantScreen(),
         '/merchant/profile': (context) => MerchantProfileScreen(),
+        '/merchant/profile/maps': (context) => MerchantGoogleMapsScreen(),
       },
     );
   }

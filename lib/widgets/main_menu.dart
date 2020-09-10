@@ -11,9 +11,9 @@ class MainMenu extends StatelessWidget {
             margin: EdgeInsets.only(top: 30),
             height: 200,
             decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/amex_logo.png"),
-                )
+              image: DecorationImage(
+                image: AssetImage("assets/amex_logo.png"),
+              )
             ),
           ),
           Container(
@@ -41,11 +41,11 @@ class MainMenu extends StatelessWidget {
                       child: Text(
                         'Onboarding',
                         style: GoogleFonts.ptSans(
-                            textStyle: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              letterSpacing: -0.5,
-                            )
+                          textStyle: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            letterSpacing: -0.5,
+                          )
                         ),
                       ),
                       onPressed: () => {
@@ -63,11 +63,11 @@ class MainMenu extends StatelessWidget {
                       child: Text(
                         'Login as Customer',
                         style: GoogleFonts.ptSans(
-                            textStyle: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              letterSpacing: -0.5,
-                            )
+                          textStyle: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            letterSpacing: -0.5,
+                          )
                         ),
                       ),
                       onPressed: () => {

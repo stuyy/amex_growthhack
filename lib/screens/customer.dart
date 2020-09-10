@@ -22,39 +22,67 @@ class _CustomerScreenState extends State<CustomerScreen> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      body: Center(
-        child: FutureBuilder(
-          builder: (context, snapshot)  {
-            if (snapshot.hasData) {
-              Future.delayed(Duration(seconds: 2));
-              return ListView.builder(
-                itemCount: snapshot.data.length,
-                itemBuilder: (context, index) {
-                  Merchant merchant = snapshot.data[index];
-                  return Column(
-                    children: <Widget>[
-                      // Widget to display the list of project
-                      InkWell(
-                        child: Card(
-                          child: ListTile(
-                            title: Text(merchant.name),
+      body: Container(
+          padding: EdgeInsets.only(top: 20),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/amex_bg.jpg"),
+              fit: BoxFit.fitHeight,
+            )
+          ),
+          child: FutureBuilder(
+            builder: (context, snapshot)  {
+              if (snapshot.hasData) {
+                Future.delayed(Duration(seconds: 2));
+                return ListView.builder(
+                  itemCount: snapshot.data.length,
+                  itemBuilder: (context, index) {
+                    Merchant merchant = snapshot.data[index];
+                    return Column(
+                      children: <Widget>[
+                        InkWell(
+                          child: Card(
+                            color: const Color(0xFF323031),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20)
+                            ),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: ListTile(
+                                    title: Text(
+                                      merchant.name,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Image(
+                                    image: AssetImage("assets/cafe.jpg"),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
-                        ),
-                        onTap: () {
-                          Navigator.pushNamed(context, '/merchant/profile', arguments: merchant);
-                        },
-                      )
-                    ],
-                  );
-                },
+                          onTap: () {
+                            Navigator.pushNamed(context, '/merchant/profile', arguments: merchant);
+                          },
+                        )
+                      ],
+                    );
+                  },
+                );
+              }
+              // By default, show a loading spinner.
+              return Center(
+                child: CircularProgressIndicator(),
               );
-            }
-            // By default, show a loading spinner.
-            return CircularProgressIndicator();
-          },
-          future: merchants,
-        )
-      ),
+            },
+            future: merchants,
+          ),
+        ),
     );
   }
 }

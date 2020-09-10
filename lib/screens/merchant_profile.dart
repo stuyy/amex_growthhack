@@ -69,6 +69,9 @@ class MerchantProfileScreen extends StatelessWidget {
                   ),
                   child: IconButton(
                     icon: Icon(Icons.directions),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/merchant/profile/maps', arguments: merchant);
+                    },
                   ),
                   margin: EdgeInsets.all(10),
                 ),
